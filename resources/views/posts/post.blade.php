@@ -16,6 +16,7 @@
             background-color: rgb(250, 248, 248);
             margin-bottom: 15px;
             border-radius: 10px;
+            padding: 10px 30px;
         }
 
     </style>
@@ -24,10 +25,12 @@
 <body>
     <div class="container">
         <div class="post">
-            <a href="{{ $post->id }}">
+            <a href="/{{ $post->slug }}">
                 <h1>{{ $post->title }}</h1>
             </a>
-            <a href="#"><p>{{ $post->category->name }}</p></a>
+            <a href="/categories/{{ $post->category->slug }}">
+                <p>{{ $post->category->name }}</p>
+            </a>
             <p>
                 {{ $post->body }}
             </p>

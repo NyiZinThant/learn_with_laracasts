@@ -8,14 +8,17 @@
     <title>Posts</title>
     <style>
         .container {
+            margin: 10px auto;
             display: flex;
-            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         .post {
             background-color: rgb(250, 248, 248);
             margin-bottom: 15px;
             border-radius: 10px;
+            padding: 10px 20px;
         }
 
     </style>
@@ -25,10 +28,10 @@
     <div class="container">
         @foreach ($posts as $post)
             <div class="post">
-                <a href="{{ $post->id }}">
+                <a href="/{{ $post->slug }}">
                     <h1>{{ $post->title }}</h1>
                 </a>
-                <a href="#">
+                <a href="/categories/{{ $post->category->slug }}">
                     <p>{{ $post->category->name }}</p>
                 </a>
                 <p>
