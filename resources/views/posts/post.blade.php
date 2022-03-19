@@ -28,6 +28,10 @@
             <a href="/{{ $post->slug }}">
                 <h1>{{ $post->title }}</h1>
             </a>
+            By
+            <a href="#">
+                {{ $post->user->name }}
+            </a>
             <a href="/categories/{{ $post->category->slug }}">
                 <p>{{ $post->category->name }}</p>
             </a>
