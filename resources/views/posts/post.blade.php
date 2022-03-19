@@ -29,11 +29,12 @@
                 <h1>{{ $post->title }}</h1>
             </a>
             By
-            <a href="#">
-                {{ $post->user->name }}
+            <a href="/authors/{{ $post->author->username }}">
+                {{ $post->author->name }}
             </a>
+            In
             <a href="/categories/{{ $post->category->slug }}">
-                <p>{{ $post->category->name }}</p>
+                {{ $post->category->name }}
             </a>
             <p>
                 {{ $post->body }}

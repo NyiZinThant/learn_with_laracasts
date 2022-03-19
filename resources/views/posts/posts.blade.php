@@ -15,6 +15,7 @@
         }
 
         .post {
+            width: 500px;
             background-color: rgb(250, 248, 248);
             margin-bottom: 15px;
             border-radius: 10px;
@@ -31,9 +32,16 @@
                 <a href="/{{ $post->slug }}">
                     <h1>{{ $post->title }}</h1>
                 </a>
-                <a href="/categories/{{ $post->category->slug }}">
-                    <p>{{ $post->category->name }}</p>
-                </a>
+                <p>
+                    By
+                    <a href="/authors/{{ $post->author->username }}">
+                        {{ $post->author->name }}
+                    </a>
+                    In
+                    <a href="/categories/{{ $post->category->slug }}">
+                        {{ $post->category->name }}
+                    </a>
+                </p>
                 <p>
                     {{ $post->excerpt }}
                 </p>
