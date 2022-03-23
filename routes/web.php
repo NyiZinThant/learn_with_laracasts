@@ -18,17 +18,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('posts.posts', [
-        "posts"=>Post::latest('published_at')->get()
+        "posts"=>Post::latest('published_at')->get(),
+        "categories"=>Category::all(),
     ]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
-    return view('posts.post', ["post"=>$post]);
+    return view('posts.post', [
+        "post"=>$post,
+    ]);
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('posts.posts', [
-        "posts"=>$category->posts
+        "posts"=>$category->posts,
+        "currentCategory"=>$category,
+        "categories"=>Category::all(),
     ]);
 });
 
