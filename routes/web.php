@@ -22,7 +22,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/{post:slug}', function (Post $post) {
+Route::get('/posts/{post:slug}', function (Post $post) {
     return view('posts.post', ["post"=>$post]);
 });
 
